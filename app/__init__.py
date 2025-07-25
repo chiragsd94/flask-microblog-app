@@ -1,7 +1,11 @@
 import os
 from flask import Flask
 from dotenv import load_dotenv
+
+
 from app.extension import db, migrate
+from app.article_routes import router
+
 
 load_dotenv()
 
@@ -13,4 +17,5 @@ def create_app():
     app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
     db.init_app(app)
     migrate.init_app(app, db)
+    app.register_blueprint(router)
     return app

@@ -1,0 +1,19 @@
+{% import 'navbar.html' as navbar %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {{ navbar.navbar() }}
+
+    {% block content %}
+
+    {% endblock content %}
+</body>
+
+</html>
